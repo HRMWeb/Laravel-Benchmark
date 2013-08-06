@@ -15,3 +15,6 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/bench/plain', 'BenchController@plain');
+Route::get('/bench/model', 'BenchController@model');
