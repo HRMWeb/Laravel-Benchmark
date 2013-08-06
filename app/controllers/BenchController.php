@@ -4,6 +4,7 @@ class BenchController extends BaseController {
 
 	public function plain()
 	{
+		error_log("Memory used by plain action: " . memory_get_peak_usage());
 		return View::make('bench/plain');
 	}
 
@@ -20,6 +21,7 @@ class BenchController extends BaseController {
 			$b->save();
 			$b->delete();
 		}
+		error_log("Memory used by model action: " . memory_get_peak_usage());
 		return View::make('bench/model');
 	}
 
